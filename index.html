@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capri Italian Recipes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== HOMEPAGE ===== -->
+  <div id="page-home" class="page active">
+    <header class="site-header">
+      <div class="flag-stripe red"></div>
+      <div class="flag-stripe white">
+        <h1>Capri Italian Recipes</h1>
+      </div>
+      <div class="flag-stripe green"></div>
+    </header>
+
+    <main class="recipe-grid-section">
+      <h2 class="section-title">Choose a Recipe</h2>
+      <div id="recipe-grid" class="recipe-grid">
+        <!-- Recipe cards injected by script.js -->
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>Jacob Gomez DIG4503C</p>
+    </footer>
+  </div>
+
+  <!-- ===== RECIPE DETAIL PAGE ===== -->
+  <div id="page-recipe" class="page">
+    <header class="recipe-header">
+      <button id="btn-back" class="btn btn-back">&#8592; Back to Recipes</button>
+      <h1 id="recipe-title" class="recipe-title"></h1>
+    </header>
+
+    <div class="recipe-layout">
+
+      <!-- Sidebar: full ingredients list -->
+      <aside class="ingredients-panel">
+        <h2>Ingredients</h2>
+        <ul id="ingredients-list" class="ingredients-list"></ul>
+      </aside>
+
+      <!-- Main: step-by-step guide -->
+      <section class="steps-panel">
+        <div id="step-card" class="step-card">
+          <!-- Step content injected by script.js -->
+
+          <h3 id="step-title" class="step-subtitle"></h3>
+          <p id="step-instruction" class="step-instruction"></p>
+
+          <!-- Ingredients used in this specific step -->
+          <div class="step-ingredients-box">
+            <h4>Used in this step:</h4>
+            <ul id="step-ingredients" class="step-ingredients-list"></ul>
+          </div>
+
+          <!-- Countdown timer for the step -->
+          <div id="timer-section" class="timer-section">
+            <div class="timer-display">
+              <span id="timer-display" class="timer-digits">00:00</span>
+            </div>
+            <div class="timer-controls">
+              <button id="btn-timer-start" class="btn btn-timer" onclick="startTimer()">&#9654; Start</button>
+              <button id="btn-timer-pause" class="btn btn-timer" onclick="pauseTimer()" disabled>&#9646;&#9646; Pause</button>
+              <button id="btn-timer-reset" class="btn btn-timer" onclick="resetTimer()">&#8635; Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <div class="step-nav">
+          <button id="btn-prev" class="btn btn-nav" onclick="prevStep()">&#8592; Previous Step</button>
+          <button id="btn-next" class="btn btn-nav btn-primary" onclick="nextStep()">Next Step &#8594;</button>
+        </div>
+
+        <!-- Completion message (hidden until last step is done) -->
+        <div id="completion-banner" class="completion-banner hidden">
+          <p>Congratulations! Your dish is ready. <strong>Buon Appetito!</strong></p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
